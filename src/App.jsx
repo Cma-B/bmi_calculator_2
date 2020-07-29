@@ -1,24 +1,9 @@
 import React, { Component } from "react";
+import Form from "./Components/Form"
 
 class App extends Component {
   render() {
-    return (
-      <form>
-      <label>weight</label>
-        <input
-          id="weight"
-          name="weight"
-          placeholder="Kg"
-        />
-      <label>height</label>
-        <input
-          id="height"
-          name="height"
-          placeholder="cm"
-        />
-        <button id="calculate">Calculate BMI</button>
-      </form>
-    );
+    return <Form />;
   }
 }
 export default App;
