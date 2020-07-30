@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Form from "./Components/Form";
+import { calculateBmi } from "./helpers/bmiHelper";
 
 class App extends Component {
   state = {
