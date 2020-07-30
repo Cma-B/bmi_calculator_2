@@ -2,10 +2,10 @@ describe(" user can calculate BMI", () => {
   beforeEach(() => {
     cy.visit('/');
   })
-  it( 'calculates BMI in metric', () => {
+  it('calculates BMI in metric', () => {
     cy.get('#weight').type(65);
     cy.get('#height').type(165);
     cy.get('button#calculate').click();
-    cy.get('p#bmi-message').should('contain', 'you are normal with a BMI of 23.9')
-  })
+    cy.get('p#bmi-message').should('contain', 'You are Normal with a BMI of 23.88')
+  });
 });

@@ -1,19 +1,21 @@
 import React, { Component } from "react";
 import Form from "./Components/Form";
 import { calculateBmi } from "./helpers/bmiHelper";
+import Message from "./Components/Message";
 
 class App extends Component {
   state = {
     weight: "",
     height: "",
     bmiValue: "",
-    bmiMessage: "",
+    bmiMessage: ""
   };
 
-  onChangeHandler = (e) => this.setState({ [e.target.name]: e.target.value });
-  onSubmitHandler = (e) => {
+  onChangeHandler = e => this.setState({ [e.target.name]: e.target.value });
+
+  onSubmitHandler = e => {
     e.preventDefault();
-    const [bmiValue, bmimessage] = calculateBmi(
+    const [bmiValue, bmiMessage] = calculateBmi(
       this.state.weight,
       this.state.height
     );
@@ -29,6 +31,12 @@ class App extends Component {
           onChangeHandler={this.onChangeHandler}
           onSubmitHandler={this.onSubmitHandler}
         />
+        {this.state.bmiValue && (
+          <Message
+            bmiValue={this.state.bmiValue}
+            bmiMessage={this.state.bmiMessage}
+          />
+        )}
       </div>
     );
   }
