@@ -1,23 +1,30 @@
-import React from 'react';
+import React from "react";
 
 const Form = props => {
   return (
     <form>
-    <label>weight</label>
+      <label htmlFor="weight">Weight</label>
       <input
-        id="weight"
+        type="number"
+        required
+        placeholder="Weight in kgs"
+        value={props.weight}
         name="weight"
-        placeholder="Kg"
+        id="weight"
+        onChange={props.onChangeHandler}
       />
-    <label>height</label>
+      <label htmlFor="height">Height</label>
       <input
-        id="height"
+        type="number"
+        required
+        placeholder="Height in cm"
+        value={props.height}
         name="height"
-        placeholder="cm"
+        id="height"
+        onChange={props.onChangeHandler}
       />
-      <button id="calculate">Calculate BMI</button>
+      <button id='calculate'>Calculate BMI</button>
     </form>
-
   );
 };
 
